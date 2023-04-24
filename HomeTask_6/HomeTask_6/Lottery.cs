@@ -11,14 +11,14 @@ namespace HomeTask_6
     {
         public static List<int> Emit(int number)
         {
-            List<int> emitList = Enumerable.Range(1, number).ToList();
+            int[] emitArr = new int[number];
             Random random = new Random();
 
             for (int i = 0; i < number; i++)
             {
-                emitList.Add(random.Next(number));
+                emitArr[i] = (random.Next(number));
             }
-            return emitList;
+            return emitArr.ToList();
         }
     }
 }
