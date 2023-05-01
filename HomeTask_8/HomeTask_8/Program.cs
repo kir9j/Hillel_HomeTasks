@@ -12,6 +12,7 @@ namespace HomeTask_8
     {
         static int doubleNumbers = 0;
         static int unpairedNumbers = 0;
+        static object block = new object(); 
         static void Main(string[] args)
         {
             Thread[] threads = new Thread[10];
@@ -35,20 +36,21 @@ namespace HomeTask_8
             
             Random random= new Random();
             int randomNumber;
-            
-            for (int i = 1; i <= 100; i++)
+
+            lock (block) 
             {
-                randomNumber = random.Next();
-                if (randomNumber % 2 == 0)
+                for (int i = 1; i <= 100; i++)
                 {
-                    lock ((object)doubleNumbers)
+                    randomNumber = random.Next();
+                    if (randomNumber % 2 == 0)
+                    {
                         doubleNumbers++;
-                }
-                else
-                {
-                    lock ((object)unpairedNumbers)
+                    }
+                    else
+                    {
                         unpairedNumbers++;
-                }
+                    }
+                }               
             }
         }
     }
