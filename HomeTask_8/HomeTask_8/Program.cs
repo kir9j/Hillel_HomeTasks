@@ -37,21 +37,22 @@ namespace HomeTask_8
             Random random= new Random();
             int randomNumber;
 
-            lock (block) 
+            for (int i = 1; i <= 100; i++)
             {
-                for (int i = 1; i <= 100; i++)
+                randomNumber = random.Next();
+                if (randomNumber % 2 == 0)
                 {
-                    randomNumber = random.Next();
-                    if (randomNumber % 2 == 0)
-                    {
-                        doubleNumbers++;
-                    }
-                    else
-                    {
-                        unpairedNumbers++;
-                    }
-                }               
+                    lock (block) { doubleNumbers++; }
+                    
+                }
+                else
+                {
+                    lock (block) { unpairedNumbers++; }
+                }
             }
+
+
+
         }
     }
 }
