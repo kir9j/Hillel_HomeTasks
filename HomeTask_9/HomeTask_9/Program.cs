@@ -43,9 +43,6 @@ namespace HomeTask_9
             Thread thread5 = new Thread(CheckForExistenceOfMinusNumbers);
             thread5.Start();
             
-
-
-
             Thread[] threads = { thread1, thread2, thread3, thread4, thread5 };
 
             while (!CheckThreadsForEnd(threads)) ;
@@ -74,21 +71,16 @@ namespace HomeTask_9
 
         static void GetSum(object par)
         {
-            var typedPar = par as Params;
-            GetSum(typedPar.from, typedPar.to);
-        }
-
-        static void GetSum(int from, int to)
-        {
             resetEvent.WaitOne();
-            lock (block) 
+            var typedPar = par as Params;
+           
+            lock (block)
             {
-                for (int i = from; i < to; i++)
+                for (int i = typedPar.from; i < typedPar.to; i++)
                 {
                     sumOfNumbers += rangeNumbers[i];
                 }
             }
-            
         }
 
         static void CheckForExistenceOfMinusNumbers()
