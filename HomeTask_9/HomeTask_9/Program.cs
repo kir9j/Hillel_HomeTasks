@@ -40,10 +40,9 @@ namespace HomeTask_9
             Params par4 = new Params() { from = 75000, to = 100000 };
             thread4.Start(par4);
 
-            resetEvent.Set();
             Thread thread5 = new Thread(CheckForExistenceOfMinusNumbers);
             thread5.Start();
-            resetEvent.Reset();
+            
 
 
 
