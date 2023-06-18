@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Моє резюме</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+            .section h2 {
+                margin-bottom: 10px;
+            }
+
+            .section p {
+                margin-bottom: 20px;
+            }
+
+        .contact-form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+            .contact-form label,
+            .contact-form input,
+            .contact-form textarea,
+            .contact-form button {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .contact-form button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <h1>Моє резюме</h1>
+
+    <div class="section">
+        <h2>Особисті дані</h2>
+        <p>Ім'я: Кирило Лисенко </p>
+        <p>Вік: 23 років</p>
+        <p>Адреса: м. Київ, Україна</p>
+    </div>
+
+    <div class="section">
+        <h2>Досвід роботи</h2>
+        <p>Компанія WNET, 2020-2022</p>
+        <p>Посада: Розробник веб-додатків</p>
+        <p>Опис: Розробка та підтримка веб-додатків з використанням HTML, CSS.</p>
+    </div>
+
+    <div class="section">
+        <h2>Освіта</h2>
+        <p>Магістерська ступінь з економічних наук, КПІ ім. Ігоря Сікорського, 2017-2022</p>
+    </div>
+
+    <div class="section">
+        <h2>Навички</h2>
+        <p>HTML</p>
+        <p>CSS</p>
+    </div>
+    <div class="section">
+        <h2>Зв'язатись</h2>
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="message">Повідомлення:</label>
+        <input id="message" name="message">
+
+        <button type="submit">Надіслати</button>
+    </div>
+</body>
+</html>
